@@ -2,7 +2,7 @@
 
 # BlackHole Playlists
 
-BlackHole is an Open-Source Music Player App! It is able to stream from any server and thus reqiures no backend, it also supports streaming from YouTube and Spotify.
+[BlackHole](https://github.com/Sangwan5688/BlackHole) is an Open-Source Music Player App! It is able to stream from any server and thus reqiures no backend, it also supports streaming from YouTube and Spotify.
 
 This is an example of how they structure the metadata for songs/playlists:
 
