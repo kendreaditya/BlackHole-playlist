@@ -30,8 +30,9 @@ def parse_playlist(playlist):
     return tracks
 
 # %%
-playlist_data = get_saranagati()
-tracks = parse_playlist(playlist_data)
-Playlist('Saranagati', tracks).createJSON()
+if "__main__" == __name__:
+    playlist_data = get_saranagati()
+    tracks = parse_playlist(playlist_data)
+    Playlist('Saranagati', tracks).createJSON()
 
 # %%

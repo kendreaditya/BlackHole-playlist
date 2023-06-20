@@ -38,11 +38,13 @@ class Song():
 
     def dict(self):
         return {k: str(v) for k, v in asdict(self).items()}
+    
+
 
 @dataclass
 class Playlist():
-    name: str
-    songs: list[Song]
+    name: str = None
+    songs: list[Song] = None
     
     def createJSON(self, path = './'):
         json_contents = json.dumps({song.id: song.__dict__() for song in self.songs}, indent=2)
@@ -51,4 +53,16 @@ class Playlist():
             f.write(json_contents)
 
         return True
-# %%
+
+    def load(self, json_data, name):
+        songs = []
+        for song_id in json_data:
+            
+            song_data = json_data[song_id]
+            song = Song(**song_data)
+            song.id = song_id
+            songs.append(song)
+        
+        self.name = name
+        self.songs = songs
+        return self
